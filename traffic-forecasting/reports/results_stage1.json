@@ -1,0 +1,17 @@
+{
+  "Linear Regression": {
+    "MAE": 3.663466137635655,
+    "RMSE": 5.011112340669748,
+    "train_seconds": 0.02797222137451172
+  },
+  "Random Forest (default)": {
+    "MAE": 3.2716897147796025,
+    "RMSE": 4.527852332447917,
+    "train_seconds": 3.814743757247925
+  },
+  "Random Forest (tuned)": {
+    "MAE": 3.173578378594733,
+    "RMSE": 4.414343614182964,
+    "train_seconds": 85.10799431800842
+  }
+}

@@ -1,0 +1,10 @@
+# Runtime dependencies for Streamlit Community Cloud.
+# For local development use `pip install -e ".[lstm,dashboard,dev]"` instead.
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+statsmodels>=0.14
+torch>=2.0
+joblib>=1.3
+streamlit>=1.30
+plotly>=5.18

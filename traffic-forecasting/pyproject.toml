@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "traffic-forecast"
+version = "0.1.0"
+description = "Smart City Traffic Forecasting - hourly vehicle counts at city junctions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Project Owner" }]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "statsmodels>=0.14",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+lstm = ["torch>=2.0"]
+dashboard = ["streamlit>=1.30", "plotly>=5.18"]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-timeout>=2.2",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+tf-generate-data = "traffic_forecast.data.generate:main"
+tf-train-stage1 = "traffic_forecast.pipeline.stage1:main"
+tf-train-stage2 = "traffic_forecast.pipeline.stage2:main"
+tf-train-stage3 = "traffic_forecast.pipeline.stage3:main"
+tf-combine = "traffic_forecast.pipeline.stage4:main"
+tf-train-all = "traffic_forecast.pipeline.run_all:main"
+tf-dashboard = "traffic_forecast.dashboard._launch:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+traffic_forecast = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "characterization: locks in current behavior to detect regressions",
+]
+addopts = "-ra --strict-markers"

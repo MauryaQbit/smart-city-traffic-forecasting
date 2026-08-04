@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Test/lint caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Generated data (regenerate via `tf-generate-data`)
+data/raw/*.csv
+data/processed/*
+!data/processed/.gitkeep
+
+# Trained models (regenerate via `tf-train-all`)
+models/*.joblib
+models/*.pt
+models/*.pkl
+
+# Predictions / arrays (regenerate via `tf-train-all`)
+reports/*.npy
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,8 @@
+{
+  "SARIMA": {
+    "MAE": 4.6571248150447495,
+    "RMSE": 6.63183585363026,
+    "train_seconds": 27.16729736328125,
+    "note": "fit on last 1440h/junction, evaluated on first 336h of validation window"
+  }
+}
